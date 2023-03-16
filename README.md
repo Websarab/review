@@ -19,3 +19,9 @@ label: style="background-color: {{ value | split: ' ' | last | handle }} !import
 
 	  {% else %}
     	  {% else %}
+	  
+ {% for media in product.media %}
+  <div class="item custom_slider_images">
+        <img class="slider_images" src="{{ media | img_url: '100x100'}}" alt="{{ media.alt }}">
+       </div>
+          {% endfor %}
