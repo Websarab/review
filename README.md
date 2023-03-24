@@ -1567,3 +1567,30 @@ label: style="background-color: {{ value | split: ' ' | last | handle }} !import
   
 {% endif %}     
         </div>
+	
+	
+	COLOR SWATCH CODE
+	
+	$('input.custom_color_swatch').click(function(){
+color_val_get = $(this).val().toLowerCase();;
+
+console.log('color_val_get',color_val_get);
+
+$('.product_image_sidebar_items').each(function(){
+
+var product_image_alt = $(this).find('.product_image_sidebars').attr('alt').toLowerCase();
+
+console.log('product_image',product_image_alt);
+
+  var match_variants_content = product_image_alt.includes(color_val_get);
+
+if(match_variants_content == true){
+console.log('yes');
+$(this).addClass('rahul12');
+}else{
+console.log('no');
+}
+
+});
+
+})
